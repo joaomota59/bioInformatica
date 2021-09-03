@@ -20,4 +20,5 @@ if  __name__ == '__main__':
     saida = transcricao(entrada)
     arquivo.write(saida+'\n')
     arquivo.close()
+    print("Saída salva, no diretório corrente!")
     
