@@ -25,7 +25,7 @@ def complemento(dna):
         elif base_nitrogenada=='G':
             dnacomplemento+='C'
         else:
-            rna+=base_nitrogenada
+            dnacomplemento+=base_nitrogenada
     return dnacomplemento
 
 def transcricao(dna):
