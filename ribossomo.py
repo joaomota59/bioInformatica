@@ -3,7 +3,7 @@ def ribossomo(entrada):
     stop = ["UAA","UAG","UGA"]
     geneticCode = {
         'UUU':'F', 'UUC':'F', 'UUA':'L', 'UUG':'L', 
-        'UCU':'S', 'UCC':'S', 'UCA':'L', 'UCG':'L', 
+        'UCU':'S', 'UCC':'S', 'UCA':'S', 'UCG':'S', 
         'UAU':'Y', 'UAC':'Y', 'UAA':'ST', 'UAG':'ST', 
         'UGU':'C', 'UGC':'C', 'UGA':'ST', 'UGG':'W', 
         'CUU':'L', 'CUC':'L', 'CUA':'L', 'CUG':'L',
