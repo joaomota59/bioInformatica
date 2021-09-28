@@ -5,3 +5,6 @@
 
 ### [ribossomo.py](https://github.com/joaomota59/bioInformatica/blob/main/ribossomo.py)
 * Programa que simula um ribossomo, dado um RNAm retorna a cadeia de aminoácido(Proteína)
+
+### [Alinhamento-Global-Needleman-Wunsch.py](https://github.com/joaomota59/bioInformatica/blob/main/Alinhamento-Global-Needleman-Wunsch.py)
+* Programa que calcula o alinhamento global ideal de duas sequências.
