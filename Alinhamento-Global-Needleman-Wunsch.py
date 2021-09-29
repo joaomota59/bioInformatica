@@ -2,8 +2,8 @@ import pandas as pd
 
 if __name__ == "__main__":
     vertical, horizontal = ('CACCCCCCACGCAAAUGCGUGGCCAGGCCGCAACAUAGCGUCUGACCUGUAGGAUCUUAACGUGCUCGAAGGGCUACAAAAUUCGAGGGCAACACCCUGACGACGAUGGGAGCGACCACGCGAGAAUACUCAUGAAUUCCAUAUGCUACGUACUAAUCUAGGCCACAGGUCAGGGCAGACACAAUGCAAUGGCACGCGCC', 'CACCCCCCACGCAAAUGCGUGGCCAGGCCGCAACAUAGCACAGCGUCUGUAGGAUCUUAACGUGCUCGAAGGGCUACAAAAUUCGAGGGCAACACCCUGACGUCACGACGAUGGGAGCGACCACGCGAGAAUA')
-
     #vertical, horizontal = ('AGCT', 'GCTT')
+    #vertical, horizontal = ('AGCTAAA', 'GCTTTGCA')
     match = 3
     mismatch = -1
     gap = -2
@@ -66,12 +66,18 @@ if __name__ == "__main__":
     L = len(matriz) -1
     C = len(matriz[0]) -1
     print("Score:",matriz[L][C])
+
+    sequenciaFinalHorizontal = ""
+    sequenciaFinalVertical = ""
+    
     while L >= 1:
         try:
             if L==1:
                 raise TypeError
             if (matriz[L][0] == matriz[0][C]):#match
                 matrizCaminho[L][C] = "↖"
+                sequenciaFinalHorizontal+=matriz[0][C]
+                sequenciaFinalVertical+=matriz[L][0]
                 L = L-1
                 C = C-1
             else:
@@ -81,12 +87,18 @@ if __name__ == "__main__":
                 maior = max(valorVertical,valorHorizontal,valorDiagonal)
                 if maior == valorVertical:
                     matrizCaminho[L][C] = "↑"
+                    sequenciaFinalHorizontal+="_"
+                    sequenciaFinalVertical+=matriz[L][0]
                     L = L-1
                 elif maior == valorHorizontal:
                     matrizCaminho[L][C] = "←"
+                    sequenciaFinalHorizontal+=matriz[0][C]
+                    sequenciaFinalVertical+="_"
                     C = C-1
                 else:
                     matrizCaminho[L][C] = "↖"
+                    sequenciaFinalHorizontal+=matriz[0][C]
+                    sequenciaFinalVertical+=matriz[L][0]
                     L = L-1
                     C = C-1
         except TypeError:
@@ -94,7 +106,26 @@ if __name__ == "__main__":
                 matrizCaminho[L][C] = "*"
             else:
                 matrizCaminho[L][C] = "↑"
+                sequenciaFinalHorizontal+="_"
+                sequenciaFinalVertical+=matriz[L][0]
             L = L-1
+
+    sequenciaFinalVertical = sequenciaFinalVertical[::-1]
+    sequenciaFinalHorizontal = sequenciaFinalHorizontal[::-1]
+
+    print(sequenciaFinalVertical)
+    for i in range(len(sequenciaFinalVertical)):
+        if sequenciaFinalVertical[i] == sequenciaFinalHorizontal[i]:
+            print("*",end="")
+        elif (sequenciaFinalVertical[i]=="A" and sequenciaFinalHorizontal[i]=="T" or
+        sequenciaFinalHorizontal[i]=="A" and sequenciaFinalVertical[i]=="T" or
+        sequenciaFinalVertical[i]=="G" and sequenciaFinalHorizontal[i]=="C" or
+        sequenciaFinalHorizontal[i]=="C" and sequenciaFinalVertical[i]=="G"):
+            print("|",end="")
+        else:
+            print(" ",end="")
+    print()
+    print(sequenciaFinalHorizontal)
 
     df2 = pd.DataFrame(matrizCaminho)
     df2.to_excel("matrizCaminho.xlsx",index=False,header=False)
