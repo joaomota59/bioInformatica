@@ -8,3 +8,6 @@
 
 ### [Alinhamento-Global-Needleman-Wunsch.py](https://github.com/joaomota59/bioInformatica/blob/main/Alinhamento-Global-Needleman-Wunsch.py)
 * Programa que calcula o alinhamento global ideal de duas sequências.
+
+### [deBruijnGraph.ipynb](https://github.com/joaomota59/bioInformatica/blob/main/deBruijnGraph.ipynb)
+* Programa que remota o genoma com o uso do algoritmo de De Bruijn Graph.
