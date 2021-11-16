@@ -9,5 +9,8 @@
 ### [Alinhamento-Global-Needleman-Wunsch.py](https://github.com/joaomota59/bioInformatica/blob/main/Alinhamento-Global-Needleman-Wunsch.py)
 * Programa que calcula o alinhamento global ideal de duas sequências.
 
-### [deBruijnGraph.ipynb](https://github.com/joaomota59/bioInformatica/blob/main/deBruijnGraph.ipynb)
-* Programa que remota o genoma com o uso do algoritmo de De Bruijn Graph.
+### [Assembler.ipynb](https://github.com/joaomota59/bioInformatica/blob/main/Assembler.ipynb)
+* Programa que é capaz de remontar uma sequência genética a partir de um arquivo texto contendo os k-mers em ordem lexicográfica.
+
+### [Composition.ipynb](https://github.com/joaomota59/bioInformatica/blob/main/Composition.ipynb)
+* Programa tem como entrada uma sequencia genômica no formado FASTA e o tamanho da leitura (k). A partir desse programa, ele gera, em ordem lexicográfica os k-mers, em um arquivo texto.
